@@ -8,6 +8,13 @@ test('Проверка на число', () => {
 });
 
 test('Проверка на строку', () => {
+  const testQuantity = '5';
+  const received = typeChecking(testQuantity);
+  const expected = 5;
+  expect(received).toBe(expected);
+});
+
+test('Проверка на текст', () => {
   const testQuantity = 'пять';
   const received = typeChecking(testQuantity);
   const expected = new Error('Полученные данные не являются числом в десятичной форме');

@@ -1,13 +1,13 @@
 import quantity from './quantity';
 
-export default function typeChecking(argument) {
+export default function typeChecking(str) {
   try {
-    if (Number.isInteger(argument)) {
-      return argument;
-    }
-    throw new Error('Полученные данные не являются числом в десятичной форме');
+    const number = parseInt(str, 10);
+    if ((!Number.isNaN(number)) && (number > 0)) {
+      return number;
+    } throw new Error();
   } catch (e) {
-    return (e);
+    return Error('Полученные данные не являются числом в десятичной форме');
   }
 }
 
